@@ -1,0 +1,193 @@
+<%- contentFor('body') %>
+    <div class="row">
+        <div class="col s12 m12 l12">
+            <div class="card">
+                <div class="card-image">
+                    <img src="images/contact.jpg" border="0">
+                    <span class="card-title">CÁC LỚP HỌC MỚI</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row" id="home-page-content">
+        <div class="col s12 m3 l2">
+            <ul class="collection with-header">
+                <li class="collection-header center-align purple darken-3 white-text">
+                    <h6>PHỤ HUYNH</h6>
+                </li>
+                <li class="collection-item">
+                    <div><i class="fa fa-dot-circle-o purple-text text-darken-3" aria-hidden="true"></i> Lưu ý khi chọn gia sư cho con em</div>
+                </li>
+                <li class="collection-item">
+                    <div><i class="fa fa-dot-circle-o purple-text text-darken-3" aria-hidden="true"></i> Tầm quan trọng của việc chọn đúng
+                        gia sư</div>
+                </li>
+                <li class="collection-item">
+                    <div><i class="fa fa-dot-circle-o purple-text text-darken-3" aria-hidden="true"></i> Những điều phụ huynh nên biết khi
+                        thuê gia sư</div>
+                </li>
+                <li class="collection-item">
+                    <div><i class="fa fa-dot-circle-o purple-text text-darken-3" aria-hidden="true"></i> Bồi dưỡng kiến thức cho con em</div>
+                </li>
+                <li class="collection-item">
+                    <div><i class="fa fa-dot-circle-o purple-text text-darken-3" aria-hidden="true"></i> Dạy kèm tại nhà</div>
+                </li>
+            </ul>
+            <ul class="collection with-header" id="home-page-content-support">
+                <li class="collection-header center-align indigo darken-3 white-text">
+                    <h6>THÔNG TIN HỖ TRỢ</h6>
+                </li>
+                <li class="collection-item avatar">
+                    <i class="material-icons circle indigo darken-3">phone</i>
+                    <span class="title home-support-title">0862.50.55.22</span>
+                    <p class="home-support-title">(Thầy Nam)</p>
+                </li>
+                <li class="collection-item avatar">
+                    <i class="material-icons circle indigo darken-3">phone</i>
+                    <span class="title home-support-title">0914.787.008</span>
+                    <p class="home-support-title">(Thầy Nam)</p>
+                </li>
+            </ul>
+        </div>
+        <div class="col s12 m6 l8">
+            <ul class="collection with-header">
+                <li class="collection-header center-align light-blue darken-3 white-text">
+                    <h6>GIA SƯ TIÊU BIỂU</h6>
+                </li>
+                <% lecturers.forEach(function(item){ %>
+                    <div class="col s12 m6 l6">
+                        <div class="card lect-green-border-item">
+                            <div class="row lect-info">
+                                <div class="col s3 m12 l3">
+                                    <% if(item.image != ""){ %>
+                                        <img class="lect-image" src="<%= item.image %>">
+                                    <% } else { %>
+                                        <img class="lect-image" src="/images/no_image.png">
+                                    <% } %>
+                                    
+                                </div>
+                                <div class="col s9 m12 l9">
+                                    Mã số: <strong class="red-text"> <%= item.id %> </strong> <br>
+                                    Gia sư: <strong class="lect-info-text"> <%= item.full_name %> </strong> <br>
+                                    Hiện là: <span class="lect-info-text"> <%= item.level_degree %> </span> <br>
+                                </div>
+                            </div>
+                            <div class="row" style="padding-left: 5px">
+                                <table class="striped detail-class-table">
+                                    <tbody>
+                                        <tr>
+                                            <td style="width: 30%">- Trường</td>
+                                            <td><%= item.education_name %></td>
+                                        </tr>
+                                        <tr>
+                                            <td>- Chuyên ngành</td>
+                                            <td><%= item.major_name %></td>
+                                        </tr>
+                                        <tr>
+                                            <td>- Nhận dạy</td>
+                                            <td><%= item.class_name %></td>
+                                        </tr>
+                                        <tr>
+                                            <td>- Các môn</td>
+                                            <td><%= item.subject_name %></td>
+                                        </tr>
+                                        <tr>
+                                            <td>- Khu vực</td>
+                                            <td><%= item.teaching_area %></td>
+                                        </tr>
+                                        <!--<tr>
+                                            <td>- Mức lương</td>
+                                            <td><strong class="red-text"><%= item.salary %></strong> đ/ buổi</td>
+                                        </tr>-->
+                                         <tr>
+                                            <td>- Liên hệ</td>
+                                            <td><strong class="red-text"><%= item.phone %></strong></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="row center-align">
+                                <a class="waves-effect waves-light btn green darken-3">CHỌN GIA SƯ</a>
+                            </div>
+                        </div>
+                    </div>
+                <% }); %>
+            </ul>
+        </div>
+        <div class="col s12 m3 l2">
+            <ul class="collection with-header">
+                <li class="collection-header center-align orange darken-3 white-text">
+                    <h6>GIA SƯ CÁC MÔN</h6>
+                </li>
+                <li class="collection-item">
+                    <div><i class="fa fa-dot-circle-o orange-text text-darken-3" aria-hidden="true"></i> Gia sư môn Toán</div>
+                </li>
+                <li class="collection-item">
+                    <div><i class="fa fa-dot-circle-o orange-text text-darken-3" aria-hidden="true"></i> Gia sư môn Lý</div>
+                </li>
+                <li class="collection-item">
+                    <div><i class="fa fa-dot-circle-o orange-text text-darken-3" aria-hidden="true"></i> Gia sư môn Hóa</div>
+                </li>
+                <li class="collection-item">
+                    <div><i class="fa fa-dot-circle-o orange-text text-darken-3" aria-hidden="true"></i> Gia sư môn Sinh</div>
+                </li>
+                <li class="collection-item">
+                    <div><i class="fa fa-dot-circle-o orange-text text-darken-3" aria-hidden="true"></i> Gia sư môn Anh</div>
+                </li>
+                <li class="collection-item">
+                    <div><i class="fa fa-dot-circle-o orange-text text-darken-3" aria-hidden="true"></i> Gia sư môn Văn</div>
+                </li>
+                <li class="collection-item">
+                    <div><i class="fa fa-dot-circle-o orange-text text-darken-3" aria-hidden="true"></i> Luyện thi Đại Học</div>
+                </li>
+            </ul>
+
+            <ul class="collection with-header">
+                <li class="collection-header center-align green darken-3 white-text">
+                    <h6>TIN TỨC NỔI BẬT</h6>
+                </li>
+            </ul>
+            <div class="auto">
+                <div class="carousel">
+                    <ul>
+                        <li class="collection-item">
+                            <img class="responsive-img" height="100" src="../images/common_1.png"><br>
+                            <a class="grey-text text-darken-4">
+                                Giáo viên muốn môn Toán 'học gì thi nấy, không đánh đố'
+                            </a>
+                        </li>
+                        <hr>
+                        <li class="collection-item">
+                            <img class="responsive-img" height="100" src="../images/portfolio-header.jpg"><br>
+                            <a class="grey-text text-darken-4"> 
+                                Nữ sinh Việt đạt điểm tuyệt đối kỳ thi chuẩn hóa SAT
+                            </a>
+                        </li>
+                        <hr>
+                        <li class="collection-item">
+                            <img class="responsive-img" height="100" src="../images/about.jpg"><br>
+                            <a class="grey-text text-darken-4">
+                                Nữ sinh được 8 trường danh tiếng mời nhập học
+                            </a>
+                        </li>
+                        <hr>
+                        <li class="collection-item">
+                            <img class="responsive-img" height="100" src="../images/home.png"><br>
+                            <a class="grey-text text-darken-4">
+                                Nam sinh trường Luật đạt điểm TOEIC tuyệt đối
+                            </a>
+                        </li>
+                        <hr>
+                        <li class="collection-item">
+                            <img class="responsive-img" height="100" src="../images/contact.jpg"><br>
+                            <a class="grey-text text-darken-4">
+                                Sử dụng chung hệ thống phần mềm quản lý thi THPT quốc gia
+                            </a>
+                        </li>
+                        <hr>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>

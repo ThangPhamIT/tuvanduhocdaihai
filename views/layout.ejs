@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="Content-Style-Type" content="text/css">
+    <meta http-equiv="Content-Script-Type" content="text/javascript">
+    <!-- meta responsive -->
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+
+    <title>Tư Vấn Du Học Đại Hải</title>
+    <meta name="description" content="Dai Hai Education" />
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;amp;lang=en"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,500,700" rel="stylesheet" type="text/css">
+    <!-- import google icon font -->
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Angular Material style sheet -->
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.css">
+    <!-- import materialize.css -->
+    <link href="/styles/materialize.min.css" media="screen,projection" rel="stylesheet" type="text/css" />
+    <!-- import font awesome -->
+    <link href="/styles/font-awesome.min.css" rel="stylesheet">
+    <!-- import material datetime picker-->
+    <link href="/styles/material-datetime-picker.css" rel="stylesheet">
+    <!-- import main.css -->
+    <link href="/styles/main.css" rel="stylesheet">
+    <!-- import google API -->
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB7XlzGJ-DY63ox_Ut-pzVUzC_SgQIggXQ&callback=initialize&sensor=false"></script>
+    <script type="text/javascript">
+        var gmap = new google.maps.LatLng(10.8500742, 106.5888267);
+        var marker;
+        function initialize() {
+            var mapProp = {
+                center: new google.maps.LatLng(10.8500742, 106.5888267),
+                zoom: 16,
+                mapTypeId: google.maps.MapTypeId.ROADMAP
+            };
+
+            var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
+
+            var styles = [
+                {
+                    featureType: 'road.arterial',
+                    elementType: 'all',
+                    stylers: [
+                        { hue: '#fff' },
+                        { saturation: 100 },
+                        { lightness: -48 },
+                        { visibility: 'on' }
+                    ]
+                }, {
+                    featureType: 'road',
+                    elementType: 'all',
+                    stylers: [
+
+                    ]
+                },
+                {
+                    featureType: 'water',
+                    elementType: 'geometry.fill',
+                    stylers: [
+                        { color: '#adc9b8' }
+                    ]
+                }, {
+                    featureType: 'landscape.natural',
+                    elementType: 'all',
+                    stylers: [
+                        { hue: '#809f80' },
+                        { lightness: -35 }
+                    ]
+                }
+            ];
+
+            var styledMapType = new google.maps.StyledMapType(styles);
+            map.mapTypes.set('Styled', styledMapType);
+
+            marker = new google.maps.Marker({
+                map: map,
+                draggable: true,
+                animation: google.maps.Animation.DROP,
+                position: gmap
+            });
+            google.maps.event.addListener(marker, 'click', toggleBounce);
+        }
+
+        function toggleBounce() {
+
+            if (marker.getAnimation() !== null) {
+                marker.setAnimation(null);
+            } else {
+                marker.setAnimation(google.maps.Animation.BOUNCE);
+            }
+        }
+
+        google.maps.event.addDomListener(window, 'load', initialize);
+    </script>
+</head>
+
+<body>
+    <!-- slide nav menu -->
+    <!-- dropdown menu -->
+    <ul id="dropdown-parents" class="dropdown-content cyan darken-1">
+        <li><a href="/dang-ky-tim-gia-su">ĐĂNG KÝ TÌM GIA SƯ</a></li>
+        <li class="divider"></li>
+        <li><a href="/phu-huynh-can-biet">PHỤ HUYNH CẦN BIẾT</a></li>
+        <li class="divider"></li>
+        <li><a href="/hoc-phi-tham-khao">HỌC PHÍ THAM KHẢO</a></li>
+        <li class="divider"></li>
+        <li><a href="/dich-vu-gia-su">DỊCH VỤ GIA SƯ</a></li>
+        <li class="divider"></li>
+        <li><a href="/gia-su-tieu-bieu">GIA SƯ TIÊU BIỂU</a></li>
+    </ul>
+    <ul id="dropdown-lecturers" class="dropdown-content cyan darken-1">
+        <li><a href="/dang-ky-lam-gia-su">ĐĂNG KÝ LÀM GIA SƯ</a></li>
+        <li class="divider"></li>
+        <li><a href="/quy-trinh-nhan-lop">QUY TRÌNH NHẬN LỚP</a></li>
+    </ul>
+    <ul id="dropdown-adminitrator" class="dropdown-content cyan darken-1">
+        <li><a href="#!">ĐĂNG NHẬP</a></li>
+        <li class="divider"></li>
+        <li><a href="#!">ĐĂNG XUẤT</a></li>
+    </ul>
+
+    <!-- dropdown menu mobile-->
+    <ul id="dropdown-parents-mobile" class="dropdown-content">
+        <li><a href="/dang-ky-tim-gia-su">ĐĂNG KÝ TÌM GIA SƯ</a></li>
+        <li class="divider"></li>
+        <li><a href="/phu-huynh-can-biet">PHỤ HUYNH CẦN BIẾT</a></li>
+        <li class="divider"></li>
+        <li><a href="/hoc-phi-tham-khao">HỌC PHÍ THAM KHẢO</a></li>
+        <li class="divider"></li>
+        <li><a href="/dich-vu-gia-su">DỊCH VỤ GIA SƯ</a></li>
+        <li class="divider"></li>
+        <li><a href="/gia-su-tieu-bieu">GIA SƯ TIÊU BIỂU</a></li>
+    </ul>
+
+    <ul id="dropdown-lecturers-mobile" class="dropdown-content">
+        <li><a href="/dang-ky-lam-gia-su">ĐĂNG KÝ LÀM GIA SƯ</a></li>
+        <li class="divider"></li>
+        <li><a href="/quy-trinh-nhan-lop">QUY TRÌNH NHẬN LỚP</a></li>
+    </ul>
+
+    <ul id="dropdown-adminitrator-mobile" class="dropdown-content">
+        <li><a href="#!">ĐĂNG NHẬP</a></li>
+        <li class="divider"></li>
+        <li><a href="#!">ĐĂNG XUẤT</a></li>
+    </ul>
+
+    <ul class="side-nav" id="mobile-demo">
+        <li>
+            <div class="userView">
+                <div class="background">
+                    <img src="../images/office.jpg">
+                </div>
+                <a href="#!user"><img class="circle center-align" src="../images/about.jpg"></a>
+                <a href="#!name"><span class="white-text name">TƯ VẤN DU HỌC ĐẠI HẢI</span></a>
+                <a href="#!email"><span class="white-text email">Website: tuvanduhocdaihai.edu.vn</span></a>
+            </div>
+        </li>
+        <li><a href="/">TRANG CHỦ</a></li>
+        <li><a class="dropdown-button" href="#!" data-activates="dropdown-parents-mobile">PHỤ HUYNH<i class="material-icons right">arrow_drop_down</i></a></li>
+        <li><a class="dropdown-button" href="#!" data-activates="dropdown-lecturers-mobile">GIA SƯ<i class="material-icons right">arrow_drop_down</i></a></li>
+        <li><a href="/lop-moi">LỚP MỚI</a></li>
+        <li><a href="/">TUYỂN DỤNG</a></li>
+        <li><a href="/lien-he">LIÊN HỆ</a></li>
+        <li><a class="dropdown-button" href="#!" data-activates="dropdown-adminitrator-mobile">QUẢN TRỊ<i class="material-icons right">arrow_drop_down</i></a></li>
+    </ul>
+
+    <!-- menu drawer -->
+    <div class="navbar-fixed">
+        <nav>
+            <div class="nav-wrapper cyan darken-1">
+                <a href="#!" class="brand-logo"><i class="material-icons md-48">school</i>TƯ VẤN DU HỌC ĐẠI HẢI</a>
+                <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+
+                <ul class="right hide-on-med-and-down">
+                    <li><a href="/">TRANG CHỦ</a></li>
+                    <li><a class="dropdown-button" href="#!" data-activates="dropdown-parents">PHỤ HUYNH<i class="material-icons right">arrow_drop_down</i></a></li>
+                    <li><a class="dropdown-button" href="#!" data-activates="dropdown-lecturers">GIA SƯ<i class="material-icons right">arrow_drop_down</i></a></li>
+                    <li><a href="/lop-moi">LỚP MỚI</a></li>
+                    <li><a href="/tuyen-dung">TUYỂN DỤNG</a></li>
+                    <li><a href="/lien-he">LIÊN HỆ</a></li>
+                    <li><a class="dropdown-button" href="#!" data-activates="dropdown-adminitrator"><i class="material-icons">person</i></a></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+
+    <div class="fixed-action-btn">
+        <a class="btn-floating btn-large red pulse">
+            <i class="large material-icons">mode_edit</i>
+        </a>
+        <ul>
+            <li><a class="btn-floating yellow darken-1"><i class="material-icons">contact_phone</i></a></li>
+            <li><a class="btn-floating green"><i class="material-icons">publish</i></a></li>
+            <li><a class="btn-floating blue"><i class="material-icons">attach_file</i></a></li>
+        </ul>
+    </div>
+
+    <!-- define content -->
+    <main class="mdl-layout__content">
+        <%- body%>
+    </main>
+
+    <!-- define footer -->
+    <footer class="page-footer cyan">
+        <div class="container">
+            <div class="row">
+                <div class="col l6 s12 white-text">
+                    © 2017 Website
+                    <h5>TƯ VẤN DU HỌC ĐẠI HẢI</h5>
+                </div>
+                <div class="col l4 offset-l2 s12">
+                    <h6 class="white-text">MẠNG XÃ HỘI</h6>
+                    <ul>
+                        <li><a class="grey-text text-lighten-3" href="#!">Facebook</a></li>
+                        <li><a class="grey-text text-lighten-3" href="#!">Gmail</a></li>
+                        <li><a class="grey-text text-lighten-3" href="#!">Twitter</a></li>
+                        <li><a class="grey-text text-lighten-3" href="#!">Skype</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <div class="container">
+                <a class="grey-text text-lighten-4 right" href="#!">© 2017 Website Developer</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- import jQuery before materialize.js-->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <!-- Angular Material requires Angular.js Libraries -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-animate.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-aria.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-messages.min.js"></script>
+
+    <!-- Angular Material Library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.js"></script>
+
+    <!-- import material datetime picker -->
+    <script src="https://unpkg.com/babel-polyfill@6.2.0/dist/polyfill.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.1/moment.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/rome/2.1.22/rome.standalone.js"></script>
+    <script type="text/javascript" src="/scripts/material-datetime-picker.js"></script>
+
+    <!-- import jcarousel -->
+    <script type="text/javascript" src="/scripts/jquery.jcarousellite.js"></script>
+
+    <script type="text/javascript" src="/scripts/materialize.min.js"></script>
+    <script type="text/javascript" src="/scripts/main.js"></script>
+    <script>
+        $('.slider').slider();
+        // Pause slider
+        $('.slider').slider('pause');
+        // Start slider
+        $('.slider').slider('start');
+        // Next slide
+        $('.slider').slider('next');
+        // Previous slide
+        $('.slider').slider('prev');
+        $(".button-collapse").sideNav();
+    </script>
+
+</body>
+
+</html>

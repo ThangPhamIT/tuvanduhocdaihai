@@ -1,0 +1,93 @@
+<%- contentFor('body') %>
+    <div class="row">
+        <div class="col s12 m12 l12">
+            <div class="card">
+                <div class="card-image">
+                    <img src="images/contact.jpg" border="0">
+                    <span class="card-title">ĐĂNG KÝ TÌM GIA SƯ</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container register-lecturers-content">
+        <div class="col s2 m3 l3"></div>
+        <div class="col s8 m6 l6">
+            <p>Quý phụ huynh vui lòng điền đầy đủ thông tin cần liên hệ. Trung tâm <span class="red-text text-darken-4">TƯ VẤN DU HỌC ĐẠI HẢI</span> sẽ liên lạc cho quý phụ huynh.</p>
+            <form action="dang-ky-tim-gia-su" method="POST">
+                <div class="row none-margin-bottom">
+                    <div class="input-field col s12 m6 l6">
+                        <input class="validate" id="full_name" name="full_name" type="text">
+                        <label for="full_name">Họ tên</label>
+                    </div>
+                    <div class="input-field col s12 m6 l6">
+                        <input class="validate" id="address" name="address" type="text">
+                        <label for="address">Địa chỉ</label>
+                    </div>
+                </div>
+                <div class="row none-margin-bottom">
+                    <div class="input-field col s12 m6 l6">
+                        <input id="phone" name="phone" type="number" class="validate" pattern="[0-9, ]*" maxlength="11">
+                        <label for="phone" data-error="Số điện thoại không đúng">Điện thoại</label>
+                    </div>
+                    <div class="input-field col s12 m6 l6">
+                        <input id="email" name="email" type="email" class="validate">
+                        <label for="email" data-error="Vui lòng nhập đúng định dạng email">Email</label>
+                    </div>
+                </div>
+                <div class="row none-margin-bottom">
+                    <div class="input-field col s12 m6 l6">
+                        <input id="subject" name="subject" type="text">
+                        <label for="subject">Môn học</label>
+                    </div>
+                    <div class="input-field col s12 m6 l6">
+                        <input id="number_student" name="number_student" type="number" class="validate" pattern="[0-9, ]*">
+                        <label for="number_student">Số lượng học sinh</label>
+                    </div>
+                </div>
+                <div class="row none-margin-bottom">
+                    <div class="input-field col s12 m6 l6">
+                        <select id="option_class" name="option_class" multiple>
+                            <option value="" disabled selected>Chọn lớp</option>
+                            <option value="1">Lớp 1</option>
+                            <option value="2">Lớp 2</option>
+                            <option value="3">Lớp 3</option>
+                            <option value="4">Lớp 4</option>
+                            <option value="5">Lớp 5</option>
+                            <option value="6">Lớp 6</option>
+                            <option value="7">Lớp 7</option>
+                            <option value="8">Lớp 8</option>
+                            <option value="9">Lớp 9</option>
+                            <option value="10">Lớp 10</option>
+                            <option value="11">Lớp 11</option>
+                            <option value="12">Lớp 12</option>
+                            <option value="LTĐH">LTĐH</option>
+                            <option value="Ngoại Ngữ">Ngoại Ngữ</option>
+                        </select>
+                    </div>
+                    <div class="input-field col s12 m6 l6">
+                        <select id="number_of_time" name="number_of_time">
+                            <option value="" disabled selected>Chọn số buổi</option>
+                            <option value="2">2 buổi</option>
+                            <option value="3">3 buổi</option>
+                            <option value="4">4 buổi</option>
+                            <option value="5">5 buổi</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row none-margin-bottom">
+                    <div class="input-field col s12 m12 l12">
+                        <textarea id="message" name="message" class="materialize-textarea"></textarea>
+                        <label for="message">Yêu cầu khác</label>
+                    </div>
+                </div>
+                <p>
+                    <button class="btn waves-effect waves-light right" type="submit" name="action">
+                        GỞI THÔNG TIN
+                    </button>
+                </p>
+            </form>
+        </div>
+        <div class="col s2 m3 l3"></div>
+    </div>
+    <br><br>

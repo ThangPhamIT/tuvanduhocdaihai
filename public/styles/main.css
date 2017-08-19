@@ -1,0 +1,165 @@
+/********************************** menu **********************************/
+nav .brand-logo {
+    position: absolute;
+    color: #fff;
+    display: inline-block;
+    font-family: "Roboto","Helvetica","Arial",sans-serif;
+    font-size: 20px;
+    letter-spacing: .02em;
+    font-weight: 400;
+    box-sizing: border-box;
+    white-space: nowrap;
+    padding: 0px 10px 0px;
+}
+
+#dropdown-parents, #dropdown-lecturers, #dropdown-adminitrator {
+    width: 240px !important;
+}
+
+#dropdown-parents > li > a, #dropdown-lecturers > li > a, #dropdown-adminitrator > li > a {
+    color: #fff !important;
+}
+
+#dropdown-parents > li > a:hover, #dropdown-lecturers > li > a:hover, #dropdown-adminitrator > li > a:hover {
+    background-color: #00838f  !important;
+}
+
+.none-margin-bottom {
+    margin-bottom: 0px !important;
+}
+
+/********************************** home page **********************************/
+.card-introdution-title {
+    color: rgba(0,0,0,.54) !important;
+    font-size: 1rem;
+    line-height: 18px;
+    overflow: hidden;
+    padding: 16px;
+    width: 90%;
+}
+
+.mdl-card-supporting-text-recruits {
+    font-size: 16px;
+    line-height: 30px;
+}
+
+#home-page-content .collection.with-header .collection-item {
+    padding-left: 10px !important;
+}
+
+#home-page-content-support .collection-item .home-support-title{
+    padding-left: 60px !important;
+}
+
+#home-height-carousel-video {
+    height: 255px !important;
+    background-color: #616161;
+}
+
+#home-height-carousel {
+    height: 255px !important;
+}
+
+.auto .carousel ul .collection-item {
+    height: 120px !important;
+}
+
+/********************************** parents **********************************/
+/*lecture*/
+.lect-green-border-item {
+    border: 1px solid #93bd4f;
+    font-size: 14px;
+}
+
+.lect-green-border-item > .lect-info {
+    display: flex;
+    vertical-align: middle;
+    align-items: center;
+    margin-bottom: 0px;
+}
+
+.lect-image {
+    width: 80px; 
+    height: 80px; 
+    border-radius: 50%; 
+    border: 1px solid #93bd4f; 
+    margin: 5px 0 0 -5px;
+}
+
+.lect-info-text {
+    color: #397704;
+}
+
+.detail-class-table tbody tr td {
+    padding: 3px 0px;
+}
+
+/********************************** new class **********************************/
+.bg-item-new-class {
+    background-image: url('../images/background1.jpg') no-repeat cover center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    color: #ffffff;
+}
+
+.green-boder-item {
+    border: 1px solid #93bd4f;
+}
+
+/********************************** tuition page **********************************/
+.tuition-price-table-1 thead th, .tuition-price-table-1 tbody tr td {
+    border: 1px #004d40 solid;
+    padding: 10px 5px;
+}
+
+.tuition-price-table-2 thead th, .tuition-price-table-2 tbody tr td {
+    border: 1px #bf360c solid;
+    padding: 10px 5px;
+}
+
+/********************************** footer **********************************/
+
+/********************************** calendar **********************************/
+
+.c-btn {
+      font-size: 14px;
+      text-transform: capitalize;
+      font-weight: 600;
+      display: inline-block;
+      line-height: 36px;
+      cursor: pointer;
+      text-align: center;
+      text-transform: uppercase;
+      min-width: 88px;
+      height: 36px;
+      margin: 10px 8px;
+      padding: 0 8px;
+      text-align: center;
+      letter-spacing: .5px;
+      border-radius: 2px;
+      background: #F1F1F1;
+      color: #393939;
+      transition: background 200ms ease-in-out;
+      box-shadow: 0 3.08696px 5.82609px 0 rgba(0, 0, 0, 0.16174), 0 3.65217px 12.91304px 0 rgba(0, 0, 0, 0.12435);
+    }
+
+    .c-btn--flat {
+      background: transparent;
+      margin: 10px 8px;
+      min-width: 52px;
+    }
+
+    .c-btn:hover {
+      background: rgba(153, 153, 153, 0.2);
+      color: #393939;
+    }
+
+    .c-btn:active {
+      box-shadow: 0 9.6087px 10.78261px 0 rgba(0, 0, 0, 0.17217), 0 13.56522px 30.3913px 0 rgba(0, 0, 0, 0.15043);
+    }
+
+    .c-btn--flat, .c-btn--flat:hover, .c-btn--flat:active {
+      box-shadow: none;
+    }

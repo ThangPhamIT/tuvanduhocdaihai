@@ -1,0 +1,137 @@
+<%- contentFor('body') %>
+    <div class="row">
+        <div class="col s12 m12 l12">
+            <div class="card">
+                <div class="card-image">
+                    <img src="images/contact.jpg" border="0">
+                    <span class="card-title">ĐĂNG KÝ LÀM GIA SƯ</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container register-lecturers-content">
+        <div class="col s2 m3 l3"></div>
+        <div class="col s8 m6 l6">
+            <p>Giảng viên, sinh viên muốn đăng ký làm gia sư, vui lòng điền đầy đủ thông tin. Trung tâm <span class="red-text text-darken-4">TƯ VẤN DU HỌC ĐẠI HẢI</span> sẽ liên lạc lại sau.</p>
+            <form action="dang-ky-lam-gia-su" method="POST">
+                <div class="row none-margin-bottom">
+                    <div class="input-field col s12 m6 l6">
+                        <input class="validate" id="full_name" name="full_name" type="text">
+                        <label for="full_name">Họ tên</label>
+                    </div>
+                    <div class="input-field col s12 m6 l6">
+                        <input class="validate" id="address" name="address" type="text">
+                        <label for="address">Địa chỉ</label>
+                    </div>
+                </div>
+                <div class="row none-margin-bottom">
+                    <div class="input-field col s12 m6 l6">
+                        <input id="phone" name="phone" type="number" class="validate" pattern="[0-9, ]*" maxlength="11">
+                        <label for="phone" data-error="Số điện thoại không đúng">Điện thoại</label>
+                    </div>
+                    <div class="input-field col s12 m6 l6">
+                        <input id="email" name="email" type="email" class="validate">
+                        <label for="email" data-error="Vui lòng nhập đúng định dạng email">Email</label>
+                    </div>
+                </div>
+                <!--<div class="row none-margin-bottom">
+                    <div class="input-field col s12 m6 l6">
+                        <input id="dob" name="dob" type="date" class="datepicker">
+                    </div>
+                    <div class="input-field col s12 m6 l6">
+                        <input id="dob" name="dob" type="date" class="datepicker">
+                    </div>
+                </div>-->
+                <div class="row none-margin-bottom">
+                    <div class="input-field col s12 m6 l6">
+                        <input class="validate" id="education_name" name="education_name" type="text">
+                        <label for="education_name">Trường đào tạo</label>
+                    </div>
+                    <div class="input-field col s12 m6 l6">
+                        <input class="validate" id="major_name" name="major_name" type="text">
+                        <label for="major_name">Chuyên ngành</label>
+                    </div>
+                </div>
+                <div class="row none-margin-bottom">
+                    <div class="input-field col s12 m6 l6">
+                        <input class="validate" id="account_name" name="account_name" type="text">
+                        <label for="account_name">Đăng ký tài khoản</label>
+                    </div>
+                    <div class="input-field col s12 m6 l6">
+                        <input class="validate" id="password" name="password" type="password">
+                        <label for="password">Mật khẩu</label>
+                    </div>
+                </div>
+                <div class="row none-margin-bottom">
+                    <div class="input-field col s12 m6 l6">
+                        <select id="level_degree" name="level_degree">
+                            <option value="" disabled selected>Hiện là</option>
+                            <option value="Thạc sĩ">Thạc sĩ</option>
+                            <option value="Kỹ sư">Kỹ sư</option>
+                            <option value="Cử nhân">Cử nhân</option>
+                            <option value="Giảng viên">Giảng viên</option>
+                            <option value="Giáo viên">Giáo viên</option>
+                            <option value="Sinh viên">Sinh viên</option>
+                        </select>
+                    </div>
+                    <div class="input-field col s12 m6 l6">
+                        <select id="teaching_area" name="teaching_area" multiple>
+                            <option value="" disabled selected>Khu vực dạy</option>
+                            <option value="Quận 12">Quận 12</option>
+                            <option value="Gò Vấp">Gò Vấp</option>
+                            <option value="Tân Bình">Tân Bình</option>
+                            <option value="Tân Bình">Củ Chi</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row none-margin-bottom">
+                    <div class="input-field col s12 m6 l6">
+                        <select id="class_name" name="class_name" multiple>
+                            <option value="" disabled selected>Chọn lớp</option>
+                            <option value="Lớp 1">Lớp 1</option>
+                            <option value="Lớp 2">Lớp 2</option>
+                            <option value="Lớp 3">Lớp 3</option>
+                            <option value="Lớp 4">Lớp 4</option>
+                            <option value="Lớp 5">Lớp 5</option>
+                            <option value="Lớp 6">Lớp 6</option>
+                            <option value="Lớp 7">Lớp 7</option>
+                            <option value="Lớp 8">Lớp 8</option>
+                            <option value="Lớp 9">Lớp 9</option>
+                            <option value="Lớp 10">Lớp 10</option>
+                            <option value="Lớp 11">Lớp 11</option>
+                            <option value="Lớp 12">Lớp 12</option>
+                            <option value="LTĐH">LTĐH</option>
+                            <option value="Ngoại Ngữ">Ngoại Ngữ</option>
+                        </select>
+                    </div>
+                    <div class="input-field col s12 m6 l6">
+                        <select id="number_of_time" name="number_of_time">
+                            <option value="" disabled selected>Chọn số buổi</option>
+                            <option value="2">2 buổi</option>
+                            <option value="3">3 buổi</option>
+                            <option value="4">4 buổi</option>
+                            <option value="5">5 buổi</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row none-margin-bottom">
+                    <div class="input-field col s12 m6 l6">
+                        <input class="validate" id="subject_name" name="subject_name" type="text">
+                        <label for="subject_name">Môn dạy</label>
+                    </div>
+                    <div class="input-field col s12 m6 l6">
+                        <input class="validate" id="note" name="note" type="text">
+                        <label for="note">Yêu cầu khác</label>
+                    </div>
+                </div>
+                <p>
+                    <button class="btn waves-effect waves-light right" type="submit" name="action">
+                        ĐĂNG KÝ
+                    </button>
+                </p>
+            </form>
+        </div>
+        <div class="col s2 m3 l3"></div>
+    </div>
+    <br><br>
