@@ -1,3 +1,4 @@
+var parse = require('pg-connection-string').parse;
 var config = {
   user: 'postgres', //env var: PGUSER
   database: 'DaiHaiEducation', //env var: PGDATABASE
@@ -8,5 +9,9 @@ var config = {
   min: 3,
   idleTimeoutMillis: 30000, // how long a client is allowed to remain idle before being closed
 };
+
+if (process.env.DATABASE_URL) {
+	config = parse(process.env.DATABASE_URL);
+}
 
 module.exports = config;
